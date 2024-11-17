@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
-import FeatureSection from './components/Featuresection'
 import WorkFlow from './components/WorkFlow'
 import PricingSection from './components/PricingSection'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
+import FeatureSection from './components/Featuresection'
 
 export const App = () => {
   return (
