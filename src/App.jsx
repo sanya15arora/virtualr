@@ -5,7 +5,7 @@ import WorkFlow from './components/WorkFlow'
 import PricingSection from './components/PricingSection'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
-import FeatureSection from './components/Featuresection'
+import FeatureSection from './components/FeatureSection'
 
 export const App = () => {
   return (
