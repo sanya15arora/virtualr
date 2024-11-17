@@ -1,7 +1,7 @@
 import React from 'react'
 import { features } from '../constants'
 
-const FeatureSection = () => {
+const Feature = () => {
     return (
         <div className='mt-20 border-b border-neutral-800 min-h-[800px]'>
             <div className="text-center">
@@ -31,4 +31,4 @@ const FeatureSection = () => {
     )
 }
 
-export default FeatureSection
+export default Feature
