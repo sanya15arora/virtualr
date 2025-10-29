@@ -1,6 +1,7 @@
 import React from 'react'
-import { CheckCircle2 } from 'lucide-react'
-import { features, pricingOptions } from '../constants'
+import {CheckCircle2} from 'lucide-react'
+import {features, pricingOptions} from '../constants'
+import {motion} from "motion/react";
 
 function PricingSection() {
     return (
@@ -8,7 +9,12 @@ function PricingSection() {
             <h2 className='text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wider'>
                 Pricing
             </h2>
-            <div className="flex flex-wrap">
+            <motion.div className="flex flex-wrap"
+                        whileInView={{y: 0, opacity: 1}}
+                        initial={{y: 100, opacity: 0}}
+                        transition={{duration: 0.5, delay: 0.2}}
+                        viewport={{once: false, amount: 0.3}}
+            >
                 {pricingOptions.map((option, index) => (
                     <div key={index} className='w-full sm:w-1/2 lg:w-1/3 p-2'>
                         <div className="p-10 border border-neutral-700 rounded-xl">
@@ -24,10 +30,11 @@ function PricingSection() {
                                 <span className='text-neutral-400 tracking-tight'>/ Month</span>
                             </p>
                             <ul>
-                                {option.features.map((feature, index) => (<li key={index} className='mt-8 flex items-center'>
-                                    <CheckCircle2 />
-                                    <span className='ml-2'> {feature}</span>
-                                </li>))}
+                                {option.features.map((feature, index) => (
+                                    <li key={index} className='mt-8 flex items-center'>
+                                        <CheckCircle2/>
+                                        <span className='ml-2'> {feature}</span>
+                                    </li>))}
                                 <a href='#' className='inline-flex justify-center items-center text-center w-full h-12 
                                         p-2 mt-20 tracking-tight text-xl hover:bg-orange-900 border border-orange-900 rounded-lg transition duration-200'>
                                     Subscribe
@@ -37,7 +44,7 @@ function PricingSection() {
 
                     </div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     )
 }

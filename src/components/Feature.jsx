@@ -1,11 +1,13 @@
 import React from 'react'
-import { features } from '../constants'
+import {features} from '../constants'
+import {motion} from "motion/react";
 
 const Feature = () => {
     return (
         <div className='mt-20 scroll-mt-20 border-b border-neutral-800 min-h-[800px]' id={'features'}>
             <div className="text-center">
-                <span className='bg-neutral-900 text-orange-500 rounded-full h-6 text-lg font-medium px-2 py-1 uppercase'>
+                <span
+                    className='bg-neutral-900 text-orange-500 rounded-full h-6 text-lg font-medium px-2 py-1 uppercase'>
                     Features
                 </span>
                 <h2 className='text-3xl sm:text-5xl lg:text-6xl mt-10 ls:mt-20 tracking-wide'> Easily build
@@ -15,9 +17,15 @@ const Feature = () => {
             </div>
             <div className="flex flex-wrap mt-10 lg:mt-20">
                 {features.map((feature, index) => (
-                    <div key={index} className='w-full sm:w-1/2 lg:w-1/3'>
+                    <motion.div key={index} className='w-full sm:w-1/2 lg:w-1/3'
+                                whileInView={{y: 0, opacity: 1}}
+                                initial={{y: 100, opacity: 0}}
+                                transition={{duration: 0.5, delay: 0.2}}
+                                viewport={{once: false, amount: 0.3}}
+                    >
                         <div className="flex">
-                            <div className="flex mx-6 h-10 w-10 p-2 bg-neutral-900 text-orange-700 justify-center items-center rounded-full">
+                            <div
+                                className="flex mx-6 h-10 w-10 p-2 bg-neutral-900 text-orange-700 justify-center items-center rounded-full">
                                 {feature.icon}
                             </div>
                             <div>
@@ -25,7 +33,7 @@ const Feature = () => {
                                 <p className='text-md p-2 mb-20 text-neutral-500'>{feature.description}</p>
                             </div>
                         </div>
-                    </div>))}
+                    </motion.div>))}
             </div>
         </div>
     )
